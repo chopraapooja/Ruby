@@ -1,0 +1,12 @@
+def palindrome?(sentence)
+  # Write your code here
+  readForward(sentence) === readBackward(sentence)
+end
+
+def readForward(sentence)
+  sentence.gsub(/\s/, '').upcase
+end
+
+def readBackward(sentence)
+  sentence.reverse.gsub(/\s/, '').upcase
+end
