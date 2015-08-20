@@ -1,0 +1,4 @@
+def sort_string(string) # According to word length
+  words = string.split(/\s/)
+  words.sort {|x,y| x.length<=>y.length}.join(' ')
+end
