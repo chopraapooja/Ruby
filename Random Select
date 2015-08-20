@@ -1,0 +1,7 @@
+def random_select(array, n)
+  rand_elements = []
+  n.times do
+    rand_elements.push array[rand(array.length)]
+  end
+  rand_elements
+end
