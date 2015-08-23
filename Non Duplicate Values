@@ -1,0 +1,7 @@
+def non_duplicated_values(values)
+  result = []
+  values.each do |value|
+    (result.member? value) ? result.delete(value) : result << value
+  end
+  result
+end
