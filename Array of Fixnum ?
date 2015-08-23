@@ -1,6 +1,4 @@
 def array_of_fixnums?(array)
-  array.each do |element|
-    return false if not element.class.equal? Fixnum
-  end
+  array.each { |element| return false if not element.class.equal? Fixnum }
   true
 end
