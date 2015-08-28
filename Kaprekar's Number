@@ -1,0 +1,13 @@
+def kaprekar?(k)
+  power_of_10 = 0
+  square = k**2
+  while (10**power_of_10.next <= square) do
+    div_mod = square.divmod(10**power_of_10)
+    return true if add_div_mod(div_mod).eql? k
+  end
+  false
+end
+
+def add_div_mod(div_mod)
+  return div_mod.reduce :+
+end
