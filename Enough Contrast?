@@ -1,0 +1,24 @@
+class Color
+  attr_reader :r, :g, :b
+  def initialize(r, g, b)
+    @r = r
+    @g = g
+    @b = b
+  end
+
+  def brightness_index
+    (299*@r + 587*@g + 114*@b) / 1000 
+  end
+
+  def brightness_difference(c)
+    (self.brightness_index - c.brightness_index).abs
+  end
+
+  def hue_difference(c)
+    (@r-c.r).abs + (@g-c.g).abs + (@b-c.b).abs
+  end
+
+  def enough_contrast?(c)
+    self.brightness_difference(c) > 125 and self.hue_difference(c) > 500 
+  end
+end
