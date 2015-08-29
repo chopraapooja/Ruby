@@ -1,0 +1,19 @@
+class Restaurant
+  def initialize(menu)
+    @menu = menu
+  end
+
+  def cost(*orders)
+    total_cost = 0
+    merged_order = self.merge_orders(orders)
+    merged_order.each {|item,quantity| total_cost += (quantity * @menu[item]) }
+    total_cost
+  end
+  
+  def merge_orders(orders) 
+    orders.reduce do |prev_order, order|
+      puts 'Hello'
+      prev_order.merge(order) { |key, v1, v2| v1+v2 }
+    end
+  end
+end
